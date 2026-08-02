@@ -1,0 +1,62 @@
+🧠 Why This Is Important
+
+Without a Message Queue:
+Order Service
+      │
+      ▼
+Email Service
+
+❌ If Email Service is down,
+Order fails.
+
+With RabbitMQ:
+Order Service
+      │
+ Publish Message
+      ▼
++----------------+
+|    RabbitMQ    |
+|     Queue      |
++----------------+
+      │
+      ▼
+Email Service
+
+Benefits:
+✅ Asynchronous communication
+✅ Reliable message delivery
+✅ Decoupled services
+✅ Automatic retries
+✅ Scalable consumers
+
+RabbitMQ vs Kafka
+
+RabbitMQ                            	Kafka
+Message Queue                  	Event Streaming Platform
+Work queues             	      Event logs
+Deletes after acknowledgment	  Retains events for a configured period
+Task processing                	Event streaming & analytics
+Low latency                    	High throughput
+
+Used By :
+Instagram
+Mozilla
+VMware
+Cisco
+Financial Applications
+
+🛠 Tech Stack
+Python
+Flask
+RabbitMQ
+Pika
+Docker
+
+📂 Project Structure
+rabbitmq-flask/
+│
+├── producer.py
+├── consumer.py
+├── requirements.txt
+├── docker-compose.yml
+└── README.md
